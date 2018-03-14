@@ -145,7 +145,7 @@ for f in file_path:
 fig = plt.figure()
 ax = fig.add_subplot(1,1,1)
 plt.plot(t_callisto,callisto,'r',label='callisto',linewidth=1.5)
-plt.plot(datetime,mex_v,'b',label='MEXART',linewidth=1.5)	
+plt.plot(datetime,mex_v,'b',label='MEXART',linewidth=0.5)	
 
 #ax.xaxis.set_major_locator(dates.MinuteLocator(interval=3))
 ax.xaxis.set_major_formatter(dates.DateFormatter('%H:%M:%S'))
