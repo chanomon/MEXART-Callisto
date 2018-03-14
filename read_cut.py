@@ -8,9 +8,6 @@ from astropy.io import fits
 from sunpy.time import parse_time
 from datetime import datetime
 
-
-
-
 def _parse_header_time(date, time): 
 	""" Return datetime object from date and time fields of header. """ 
 	if time is not None: 
@@ -25,7 +22,7 @@ def read_cut(start,end):
 ###############################################################
 #Periodo de tiempo
 ##############################################################
-	#path = './'
+	path = './'
 	#start='22:00'
 	#end='22:14'
 	
@@ -35,27 +32,17 @@ def read_cut(start,end):
 	## los tiempos se pasan a horas decimales
 	start_flag=float(hh_start)+ float(mm_start)/60.0
 	end_flag=float(hh_end)+ float(mm_end)/60.0
-	#
-	print 'start: ',start_flag
-	print 'end:  ', end_flag
-	
-	
-	#########################################################################
-	##parte de MEXART
-	#########################################################################
-	
-	
-	
+
 	######################################################################
 	##obtencion de la fecha a partir del nombre del archivo
 	######################################################################
-	for file in os.listdir():
+	for file in os.listdir(path):
 		if file.endswith("TMSERIES.txt"):	#checar que canal se esta usando  y checar la terminacion del archivo
 	        	mexartf=file
 	
 	stream_time = []
 	stream_v = []
-	
+	print mexartf
 	splits = mexartf.split('-')
 	year = splits[0]
 	month = splits[1]
@@ -87,5 +74,3 @@ def read_cut(start,end):
 	
 	g.close()
 	print 'se leyeron y guardaron recorte de datos de MEXART'
-
-	
