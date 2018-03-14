@@ -100,7 +100,8 @@ for file in os.listdir('./'):
 
 callisto=[]
 t_callisto=[]
-
+findex0=x
+findex1=y
 for f in file_path:
         
 	#f_path=i#raw_input('Enter your input file   ')
@@ -137,15 +138,16 @@ for f in file_path:
         
 	for index in range(len(data[0])):
 		suma=0.0
-		for j in range(0,190):#131,133 #(126,138)para ver frecuencias de puschino
+		for j in range(findex0,findex1):#131,133 #(126,138)para ver frecuencias de puschino
 			suma = suma + data[j][index]
 		callisto.append((suma/100 -286)*5+1090)   # se resta para poner la senal de Callisto a 0
                 t_callisto.append(x_time[index])
 
+labelchain='callisto ['+str(frequencies[findex1])[:-1]+'-'+str(frequencies[findex0])[:-1]+' MHz]'
 fig = plt.figure()
 ax = fig.add_subplot(1,1,1)
-plt.plot(t_callisto,callisto,'r',label='callisto',linewidth=1.5)
-plt.plot(datetime,mex_v,'b',label='MEXART',linewidth=0.5)	
+plt.plot(t_callisto,callisto,'r',label=labelchain,linewidth=1.5)
+plt.plot(datetime,mex_v,'b',label='MEXART [140.6-138.6 MHz]',linewidth=0.5)	
 
 #ax.xaxis.set_major_locator(dates.MinuteLocator(interval=3))
 ax.xaxis.set_major_formatter(dates.DateFormatter('%H:%M:%S'))
