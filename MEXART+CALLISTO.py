@@ -45,13 +45,10 @@ files= sorted(files) #se ordenan los archivos
 
 stream_time = []
 stream_v = []
-for file in files:
-    splits = file.split('-')
-    yyyy = (splits[0])
-    print splits
-    m = (splits[1])
-    d = (splits[2])
-
+splits = files[0].split('-')
+yyyy = (splits[0])
+m = (splits[1])
+d = (splits[2])
 
 readMEX=raw_input('para mexcut escribe y, si ya esta mexcut escribe n')
 if readMEX == 'y':
