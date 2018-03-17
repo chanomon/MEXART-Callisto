@@ -37,6 +37,12 @@ def movingaverage(interval, window_size):
 path = './'		#checar path, #se tiene que correr en la carpeta contenedora de los archivos
 files = []
 
+readMEX=raw_input('para mexcut escribe y, si ya esta mexcut escribe n')
+if readMEX == 'y':
+        inicio = raw_input('escribe tiempo de inicio formato hh:mm')
+        fin = raw_input('escribe tiempo de fin formato hh:mm')
+        read_cut(inicio,fin)
+
 for file in os.listdir('./'):
     if file.endswith("mexcut.dat"):	#checar que canal se esta usando 
         files.append(file)
@@ -49,12 +55,6 @@ splits = files[0].split('-')
 yyyy = (splits[0])
 m = (splits[1])
 d = (splits[2])
-
-readMEX=raw_input('para mexcut escribe y, si ya esta mexcut escribe n')
-if readMEX == 'y':
-        inicio = raw_input('escribe tiempo de inicio formato hh:mm')
-        fin = raw_input('escribe tiempo de fin formato hh:mm')
-        read_cut(inicio,fin)
 
 #############################################
 ##Abrir archivo recortado para graficarlo
