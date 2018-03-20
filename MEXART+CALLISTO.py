@@ -141,7 +141,7 @@ for f in file_path:
 		callisto.append((suma/100 -286)*5+1090)   # se resta para poner la senal de Callisto a 0
                 t_callisto.append(x_time[index])
 
-labelchain='callisto ['+str(frequencies[findex1])[:-1]+'-'+str(frequencies[findex0])[:-1]+' MHz]'
+labelchain='callisto ['+"%.1f" % frequencies[findex1]+' - '+"%.1f" % frequencies[findex0]+' MHz]'
 fig = plt.figure()
 ax = fig.add_subplot(1,1,1)
 plt.plot(t_callisto,callisto,'r',label=labelchain,linewidth=1.5)
