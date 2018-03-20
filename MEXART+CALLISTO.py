@@ -77,6 +77,8 @@ for line in content:
 #print mex_v[0]
 first_time=dtt(mex_time[0])
 datetime = []
+ftsplit=first_time.split(':')
+hh,mm,ss,ms=int(ftsplit[0]),int(ftsplit[1]),int(ftsplit[2][0:2]),int(ftsplit[2][3:])
 hh,mm,ss,ms=int(first_time[0:2]),int(first_time[3:5]),int(first_time[6:8]),int(first_time[9:])
 start_object = dt.datetime(year = int(yyyy),month=int(m),day=int(d),hour=hh,minute=mm,second=ss,microsecond=ms)
 datetime.append(start_object)
