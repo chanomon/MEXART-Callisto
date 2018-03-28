@@ -143,7 +143,7 @@ for f in file_path:
                 t_callisto.append(x_time[index])
 mexart=[]
 for i in mex_v:
-	mexart.append(mex_v) ###########################################################aqui
+	mexart.append(i) ###########################################################aqui
 labelchain='callisto ['+"%.1f" % frequencies[findex1]+' - '+"%.1f" % frequencies[findex0]+' MHz]'
 fig = plt.figure()
 ax = fig.add_subplot(1,1,1)
