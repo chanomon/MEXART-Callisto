@@ -5,6 +5,7 @@ from readcol import fgetcols
 import numpy as np
 from math import fmod
 from math import exp
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib import dates
 from astropy.io import fits
@@ -17,7 +18,7 @@ from dec_to_time import dec_to_time as dtt
 from read_cut import read_cut
 from datetime import timedelta
 
-
+mpl.rcParams["savefig.directory"] = './'
 def _parse_header_time(date, time): 
 	""" Return datetime object from date and time fields of header. """ 
 	if time is not None: 
