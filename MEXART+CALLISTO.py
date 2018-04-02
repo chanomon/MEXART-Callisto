@@ -16,7 +16,7 @@ import datetime as dt
 from dec_to_time import dec_to_time as dtt
 from read_cut import read_cut
 from datetime import timedelta
-
+from math import floor
 
 def _parse_header_time(date, time): 
 	""" Return datetime object from date and time fields of header. """ 
@@ -72,7 +72,7 @@ mex_v=[]
 for line in content:
         str_time, str_v = line.split()
         mex_time.append(float(str_time))
-        mex_v.append(((float(str_v)+6.36)*45.0)-128+54)#escalamiento para comparar con callisto
+        mex_v.append(float(str_v))#escalamiento para comparar con callisto
 #print mex_time[0]
 #print mex_v[0]
 first_time=dtt(mex_time[0])
@@ -138,14 +138,31 @@ for f in file_path:
 		suma=0.0
 		for j in range(findex0,findex1):#131,133 #(126,138)para ver frecuencias de puschino
 			suma = suma + data[j][index]
-		callisto.append((suma/100 -286)*5+1090)   # se resta para poner la senal de Callisto a 0
+		callisto.append((suma)   # se resta para poner la senal de Callisto a 0
                 t_callisto.append(x_time[index])
 
+
+call=[]		
+mexart=[]
+fcall[]
+fmex=[]
+
+for i in mex_v:
+	fmex.append(floor(i)) 
+for i in callisto:
+	fcall.append(floor(i))
+bgmex=mode(fmex)
+bgcall=mode(fcall)
+for i in mex_v:
+	mexart.append((i-bgmex)) ########################################################3
+for i in callisto:
+	call.append((i-bgcall))	###############################################
+	
 labelchain='callisto ['+"%.1f" % frequencies[findex1]+' - '+"%.1f" % frequencies[findex0]+' MHz]'
 fig = plt.figure()
 ax = fig.add_subplot(1,1,1)
-plt.plot(t_callisto,callisto,'r',label=labelchain,linewidth=1.5)
-plt.plot(datetime,mex_v,'b',label='MEXART [138.6-140.6 MHz]',linewidth=0.5)	
+plt.plot(t_callisto,call,'r',label=labelchain,linewidth=1.5)
+plt.plot(datetime,mexart,'b',label='MEXART [138.6-140.6 MHz]',linewidth=0.5)	
 
 #ax.xaxis.set_major_locator(dates.MinuteLocator(interval=3))
 ax.xaxis.set_major_formatter(dates.DateFormatter('%H:%M:%S'))
