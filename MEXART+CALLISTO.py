@@ -152,8 +152,8 @@ for i in mex_v:
 	fmex.append(floor(i)) 
 for i in callisto:
 	fcall.append(floor(i))
-bgmex=mode(fmex)
-bgcall=mode(fcall)
+bgmex=int(mode(fmex)[0])
+bgcall=int(mode(fcall)[0])
 for i in mex_v:
 	mexart.append((i-bgmex)) ########################################################3
 for i in callisto:
