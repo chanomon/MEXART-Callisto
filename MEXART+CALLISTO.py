@@ -145,7 +145,7 @@ for f in file_path:
 
 call=[]		
 mexart=[]
-fcall[]
+fcall=[]
 fmex=[]
 
 for i in mex_v:
