@@ -139,7 +139,7 @@ for f in file_path:
 		suma=0.0
 		for j in range(findex0,findex1):#131,133 #(126,138)para ver frecuencias de puschino
 			suma = suma + data[j][index]
-		callisto.append((suma)   # se resta para poner la senal de Callisto a 0
+		callisto.append((suma))   # se resta para poner la senal de Callisto a 0
                 t_callisto.append(x_time[index])
 
 
