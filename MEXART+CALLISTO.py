@@ -17,6 +17,7 @@ from dec_to_time import dec_to_time as dtt
 from read_cut import read_cut
 from datetime import timedelta
 from math import floor
+from scipy.stats import mode
 
 def _parse_header_time(date, time): 
 	""" Return datetime object from date and time fields of header. """ 
