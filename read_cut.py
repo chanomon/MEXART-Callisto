@@ -42,7 +42,7 @@ def read_cut(start,end):
 	
 	stream_time = []
 	stream_v = []
-	print mexartf
+	print( mexartf)
 	splits = mexartf.split('-')
 	year = splits[0]
 	month = splits[1]
@@ -57,15 +57,14 @@ def read_cut(start,end):
 	##################################################################
 	
 	g = open(path+year+'-'+month+'-'+day+'-mexcut.dat','w')
-	    
+		    
 	with open(mexartf, "rb") as f:
 		for i in range(10): #checar donde empiezan los datos en casos cercanos a los extremos de tiempo
 			f.readline()
-			print f.readline(),i
-	
-	        content = f.readlines()
-		print 'empezando a leer datos de mexart'    
-	    	for line in content:
+			print( f.readline(),i)
+		content = f.readlines()##
+		print( 'empezando a leer datos de mexart'    )
+		for line in content:
 	        	str_time, str_v = line.split()
 		        time = float(str_time)
 	        	v = float(str_v)
@@ -73,4 +72,4 @@ def read_cut(start,end):
 	        		g.write(str_time +'\t'+ str_v+'\n')
 	
 	g.close()
-	print 'se leyeron y guardaron recorte de datos de MEXART'
+	print( 'se leyeron y guardaron recorte de datos de MEXART')

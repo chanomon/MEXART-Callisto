@@ -223,7 +223,7 @@ def fgetcols(cfile,*args,**keywords):
     if 'arraytype' in keywords.keys():
         arraytype = keywords['arraytype']
         if arraytype != "numpy":
-            print "readcol: As of v5.0, only numpy arrays are returned"
+            print( "readcol: As of v5.0, only numpy arrays are returned")
     if 'fs' in keywords.keys():
         fs = keywords['fs']
     else:
