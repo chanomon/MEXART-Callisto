@@ -30,6 +30,7 @@ time= axes.data['time'][0]
 spectrum=fl[0].data
 header = fl[0].header
 freqs =  axes.data['frequency'][0]
+instrument = header.get('INSTRUME',header.get('INSTRUME'))
 start_time = header.get('TIME-OBS',header.get('TIME$_OBS'))
 start_object = datetime.strptime(file_name[7:15]+' '+str(start_time)+'000', '%Y%m%d %H:%M:%S.%f')#checar tiempo de inicio
 
@@ -94,7 +95,7 @@ if dates:
 plt.xticks(rotation=37)
 plt.subplots_adjust(bottom=.2)
 plt.subplots_adjust(left = .2)
-plt.title('MEXART Radio flux density '+str(start_object)[:10])
+plt.title(instrument+' Radio flux density '+str(start_object)[:10])
 plt.grid(linewidth=0.3,linestyle='--',color='black')
 plt.show()
 
