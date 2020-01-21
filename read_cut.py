@@ -1,12 +1,22 @@
 #!/usr/bin/env python
+# coding: utf-8
+
+# In[ ]:
+
+
+#!/usr/bin/env python
 ##se recortan los archivos de mexart y de callisto para dejar
 # solamente la parte del evento
 import os
+import sys
 from readcol import fgetcols 
 from matplotlib import dates
 from astropy.io import fits
 from sunpy.time import parse_time
 from datetime import datetime
+
+    
+
 
 def _parse_header_time(date, time): 
 	""" Return datetime object from date and time fields of header. """ 
@@ -58,7 +68,7 @@ def read_cut(start,end):
 	
 	g = open(path+year+'-'+month+'-'+day+'-mexcut.dat','w')
 		    
-	with open(mexartf, "rb") as f:
+	with open(mexartf, "r") as f:
 		for i in range(10): #checar donde empiezan los datos en casos cercanos a los extremos de tiempo
 			f.readline()
 			print( f.readline(),i)
@@ -71,5 +81,31 @@ def read_cut(start,end):
 	        	if start_flag <= time and time <= end_flag:
 	        		g.write(str_time +'\t'+ str_v+'\n')
 	
-	g.close()
-	print( 'se leyeron y guardaron recorte de datos de MEXART')
+
+if __name__ == "__main__":
+    #print(len(sys.argv))
+    #for i in sys.argv:
+    #    print(i)
+    if len(sys.argv) != 3:
+        sys.exit("Not enough args")
+    else:
+        n=len(sys.argv)
+        if '-h' in sys.argv:
+            #hour_flag = True
+            #filename = sys.argv[i+1]
+            try:
+                start,end = sys.argv[2].split(',')
+                read_cut(start,end)
+                
+                    #read_cut(start,end)
+            except Exception as ex:
+                print(ex)
+        else:
+            print('something went wrong')
+            
+                
+    
+    
+        
+    
+
