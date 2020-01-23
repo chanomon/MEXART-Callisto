@@ -69,17 +69,17 @@ def read_cut(start,end):
 	g = open(path+year+'-'+month+'-'+day+'-mexcut.dat','w')
 		    
 	with open(mexartf, "r") as f:
-		for i in range(10): #checar donde empiezan los datos en casos cercanos a los extremos de tiempo
-			f.readline()
-			print( f.readline(),i)
 		content = f.readlines()##
 		print( 'empezando a leer datos de mexart'    )
 		for line in content:
-	        	str_time, str_v = line.split()
-		        time = float(str_time)
-	        	v = float(str_v)
-	        	if start_flag <= time and time <= end_flag:
-	        		g.write(str_time +'\t'+ str_v+'\n')
+			if line.startswith('#'):
+				pass
+			else:
+	        		str_time, str_v = line.split()
+		        	time = float(str_time)
+	        		v = float(str_v)
+	        		if start_flag <= time and time <= end_flag:
+	        			g.write(str_time +'\t'+ str_v+'\n')
 	
 
 if __name__ == "__main__":
