@@ -44,7 +44,7 @@ for file in os.listdir('./'):
     if file.endswith(".fit"):
             file_path.append(file)
 
-
+file_path.sort()
 date_text = file_path[0].split('_')[1]
 yyyy=date_text[:4]
 m=date_text[4:6]
