@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-
+# autor: Elizandro Huipe Domratcheva  ; hdomeli@gmail.com
+#programa para cambiar la hora en forma decimal a tiempo sexagesimal para tratamiento de datos estándar
 def dec_to_time(decimal):
 	hours = int(decimal)
 	decmin = (decimal % 1)*60.
