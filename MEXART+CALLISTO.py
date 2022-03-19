@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#
+## autor: Elizandro Huipe Domratcheva  ; hdomeli@gmail.com
 #Código en python 3para hacer la curva de luz de los dos intrumentos
 #Para ejecutar, se debe tener instalados los paquetes indicados abajo
 #Adicionalmente se deben tener los archivos *mexcut.dat y *.fit en 
