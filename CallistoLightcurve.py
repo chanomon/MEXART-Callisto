@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #autor: Elizandro Huipe Domratcheva ; hdomeli@gmail.com
-#Código en python 3para hacer la curva de luz solo de Callisto
+#Código en python 3 para hacer la curva de luz solo de Callisto
 #Para ejecutar, se debe tener instalados los paquetes indicados abajo
 #Adicionalmente se deben tener el archivo *.fit en 
 #la misma carpeta que ejecutar este script
