@@ -12,4 +12,4 @@ This scripts are made to work with the MEXART data structure.
 To create spectrums just run in terminal 'python newspec.py' later, the url or the fit file path will required
 
 
-# all software to copy, process data and generate Callisto plots automatically is located in RICE (rice;/vol0software/elizandrohd/)
+all software to copy, process data and generate Callisto plots automatically is located in RICE (rice;/vol0software/elizandrohd/)
